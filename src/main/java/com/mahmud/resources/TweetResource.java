@@ -38,5 +38,10 @@ public class TweetResource {
         tweetRepository.delete(id);
     }
 
+    @GET
+    @Produces(APPLICATION_JSON)
+    public TweetView viewTweets() {
+        return tweetRepository.showAll();
+    }
 
 }

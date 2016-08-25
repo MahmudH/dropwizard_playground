@@ -22,4 +22,13 @@ public class TweetRepository {
     public void delete(long id) {
         tweet.remove(id);
     }
+
+    public TweetView showAll() {
+        if (tweet.size() > 0) {
+            for (int i = 0; i < tweet.size(); i++) {
+                return new TweetView(i, tweet.get(i));
+            }
+        }
+        return null;
+    }
 }
