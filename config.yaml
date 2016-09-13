@@ -6,3 +6,7 @@ server:
     - type: http
       port: 8080
   adminConnectors: []
+
+database:
+  driverClass: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/postgres

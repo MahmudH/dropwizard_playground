@@ -1,9 +1,12 @@
 package com.mahmud.resources;
 
 import com.mahmud.api.TweetView;
+import com.mahmud.api.TweetsView;
 import com.mahmud.repositories.TweetRepository;
 
 import javax.ws.rs.*;
+
+import java.util.List;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
@@ -40,8 +43,12 @@ public class TweetResource {
 
     @GET
     @Produces(APPLICATION_JSON)
-    public TweetView viewTweets() {
-        return tweetRepository.showAll();
+//    public List<TweetView> viewTweets() {
+//        return tweetRepository.showAll();
+//    }
+    public TweetsView viewTweets() {
+        return new TweetsView(tweetRepository.showAll());
     }
+
 
 }
